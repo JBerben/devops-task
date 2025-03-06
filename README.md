@@ -1,3 +1,4 @@
 # devops-task
 
-Fork this repository of and make it public so that we can review 
+- Choose ONE of the folders to submit a task under
+- Fork this repository and Provide a link to the fork
