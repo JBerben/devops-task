@@ -38,7 +38,7 @@ The goal of this task is to evaluate your ability to provision AWS infrastructur
 ---
 
 ## **Submission Guidelines**  
-🔹 Provide a **GitHub repository** containing:  
+🔹 Provide a Fork of this **GitHub repository** containing:  
 - Terraform code and **modules** for VPC, security groups, and EC2.  
 - A **CI/CD pipeline configuration** (e.g., `.github/workflows`, `.gitlab-ci.yml`).  
 - A brief **README** explaining:  
