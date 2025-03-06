@@ -39,10 +39,7 @@ Deploy an AWS Lambda function using Infrastructure as Code (**Terraform**) that 
   - How to test the function.  
   - Any assumptions made.  
 
-⏳ **Time Estimate**: 1-2 hours  
+⏳ **Time Estimate**: 1 week
 
 💡 **Pro Tip**: Keep it simple but follow best practices for security and scalability! 🚀  
 
----
-
-Would you like a sample Terraform/CDK deployment to get started? 😊  
