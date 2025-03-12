@@ -29,4 +29,4 @@ After a successful run, you should see 2 outputs. The first is the API Gateway b
 - To test the S3 event trigger, upload any file to the bucket specified in the outputs and check the aws/lambda/s3-trigger Cloudwatch Log group to see the file details.
 
 ## Assumptions
-- Assuming the use of a temporary access key for AWS. This means that the github repo secrets and the Terraform workspace env variables will have to be changed every 12-24hrs. 
+- Assuming the use of a temporary access key for AWS. This means that the github repo secrets and the Terraform workspace env variables will have to be changed every 12-24hrs.
