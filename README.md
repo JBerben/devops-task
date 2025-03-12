@@ -1,4 +1,4 @@
-# 🚀 Platform Engineer Interview Task: Deploy an AWS Lambda Function  
+# 🚀 Platform Engineer Interview Task: Deploy an AWS Lambda Function
 
 ## **API Gateway and S3 Event trigger Lambda**  
 Deploys 2 AWS Lambda functions using Infrastructure as Code (**Terraform**). One responds to an API Gateway request, and one as an S3 event trigger.
