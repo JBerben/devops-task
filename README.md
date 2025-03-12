@@ -15,9 +15,9 @@ Uses Github Actions for CI/CD.
 
 - Create a new terraform workspace on app.terraform.io to link to the Github repository. In your orginization settings in Terraform, select "VCS providers" and follow the prompts to authorize your Github account.
 
-- AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN Must all be set as Sensitive env variables within the "Workspace Variables" section in your terraform workspace.
+- AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN Must all be set as Sensitive env variables within the "Workspace Variables" section in your Terraform workspace as well as your Github repository.
 
-- After successfully creating and linking a terraform workspace with your Github repository and setting the correct secrets and env variables you should be able to make any change to this README and upon pushing, Terraform will deploy.
+- After successfully creating and linking a Terraform workspace with your Github repository and setting the correct secrets and env variables you should be able to make any change to this README and upon pushing, Terraform will deploy.
 
 ## How to test
 
