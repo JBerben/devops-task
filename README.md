@@ -1,45 +1,32 @@
 # 🚀 Platform Engineer Interview Task: Deploy an AWS Lambda Function  
 
-## **Objective**  
-Deploy an AWS Lambda function using Infrastructure as Code (**Terraform**) that performs a simple task, such as responding to an API Gateway request or processing an S3 event.  
+## **API Gateway and S3 Event trigger Lambda**  
+Deploys 2 AWS Lambda functions using Infrastructure as Code (**Terraform**). One responds to an API Gateway request, and one as an S3 event trigger.
 
----
+Uses Github Actions for CI/CD.
 
-## **Task Requirements**  
+## Requirements
+- Amazon AWS account
+- Terraform account
+- Github account and repository to store AWS secret keys in
 
-### **1️⃣ Choose an Infrastructure as Code Tool**  
-- Use **Terraform** to deploy the Lambda function.  
-- Include necessary IAM roles and permissions.  
+## How to deploy
+- Create a fork of this repository and then clone it. Set your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY  as repository secrets In the newly cloned repository.
 
-### **2️⃣ Lambda Function Behavior**  
-- **Option 1: API Gateway Trigger**  
-  - The function should return `"Hello, World!"` when triggered via an **API Gateway** endpoint.  
+- Create a new terraform workspace on app.terraform.io to link to the Github repository. In your orginization settings in Terraform, select "VCS providers" and follow the prompts to authorize your Github account.
 
-- **Option 2: S3 Event Trigger**  
-  - The function should be triggered when a file is uploaded to an **S3 bucket**.  
-  - It should log the file name to **Amazon CloudWatch Logs**.  
+- AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN Must all be set as Sensitive env variables within the "Workspace Variables" section in your terraform workspace.
 
-### **3️⃣ Deployment Requirements**  
-- Deploy the function to AWS using **Terraform** or **AWS CDK**.  
-- Ensure **least privilege IAM permissions** (i.e., grant only required access).  
+- After successfully creating and linking a terraform workspace with your Github repository and setting the correct secrets and env variables you should be able to make any change to this README and upon pushing, Terraform will deploy.
 
-### **4️⃣ Bonus (Optional)**  
-✅ Implement **automated testing** for the function.  
-✅ Set up a **CI/CD pipeline** (GitHub Actions, AWS CodePipeline, etc.) for automated deployment.  
-✅ Use **AWS SAM** or **Serverless Framework** instead of Terraform/CDK.  
+## How to test
 
----
+After a successful run, you should see 2 outputs. The first is the API Gateway base url, and the second is the bucket that has the S3 event trigger.
 
-## **Submission Guidelines**  
-🔹 Provide a FORK of this **GitHub repository** containing:  
-- The **Terraform** for deployment.  
-- The **Lambda function code** (written in Python or Node.js).  
-- A brief **README** explaining:  
-  - How to deploy the function.  
-  - How to test the function.  
-  - Any assumptions made.  
+- Test the API Gateway by appending "/hello" to the base url and visiting in browser, or by using:
+`aws lambda invoke --region=ap-southeast-2 --function-name=hello-world-test response.json`
 
-⏳ **Time Estimate**: 1 week
+- To test the S3 event trigger, upload any file to the bucket specified in the outputs and check the aws/lambda/s3-trigger Cloudwatch Log group to see the file details.
 
-💡 **Pro Tip**: Keep it simple but follow best practices for security and scalability! 🚀  
-
+## Assumptions
+Assuming the use of a temporary access key for AWS.
